@@ -7,11 +7,10 @@ let contador = 0;
 console.log(`Timer iniciado, disparando alarme em ${tempoParaAlarmarEmSegundos} segundos`);
 const inicioAlarme = () => {
     contador++;
-    console.log(contador);
 
-    if (contador >= tempoParaAlarmarEmSegundos && contador <= (tempoParaAlarmarEmSegundos + tempoAlarmandoEmSegundos)) {
+    if (contador >= tempoParaAlarmarEmSegundos && contador < (tempoParaAlarmarEmSegundos + tempoAlarmandoEmSegundos)) {
         console.log("Beep beep!");
-    } else if (contador > tempoParaAlarmarEmSegundos + tempoAlarmandoEmSegundos) {
+    } else if (contador >= tempoParaAlarmarEmSegundos + tempoAlarmandoEmSegundos) {
         clearInterval(id);
     }
 };
